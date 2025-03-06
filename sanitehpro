@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saniteh - Servicios de Limpieza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2a9d8f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            max-width: 150px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        .carousel {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #264653;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="saniteh-logo.png" alt="Saniteh Logo">
+        <h1>Saniteh</h1>
+        <p>Servicios Profesionales de Limpieza</p>
+    </header>
+    <div class="carousel">
+        <img src="carousel1.jpg" alt="Saniteh en acción" class="active">
+        <img src="carousel2.jpg" alt="Equipo de limpieza">
+        <img src="carousel3.jpg" alt="Desinfección profesional">
+    </div>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#buzon">Buzón de Quejas y Sugerencias</a>
+        <a href="#app">Descargar App</a>
+    </nav>
+    <div class="container">
+        <section id="nosotros">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Saniteh es una empresa comprometida con la limpieza y el bienestar de nuestros clientes. Ofrecemos servicios de alta calidad para hogares y empresas.</p>
+        </section>
+    </div>
+    <div class="container" id="app">
+        <h2>Descarga nuestra App</h2>
+        <p>Obtén nuestra aplicación para reservar servicios de limpieza de forma fácil y rápida.</p>
+        <a href="#" id="app-link" style="display: inline-block; padding: 10px 20px; background-color: #2a9d8f; color: white; text-decoration: none; border-radius: 5px;">Descargar App</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Saniteh. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        let index = 0;
+        function changeImage() {
+            let images = document.querySelectorAll(".carousel img");
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }
+        setInterval(changeImage, 3000);
+    </script>
+</body>
+</html>
